@@ -7,6 +7,8 @@ export function FormField({
   val,
   Error,
   errorMsg,
+  name,
+  type = "text",
 }) {
   const baseStyle = clsx(
     "w-full outline-1 p-4 font-bold text-xl rounded-sm mt-6",
@@ -19,7 +21,8 @@ export function FormField({
     <>
       <div className="relative">
         <input
-          type="text"
+          type={type}
+          name={name}
           placeholder={placeholderText}
           onChange={onChangeValue}
           value={val}
